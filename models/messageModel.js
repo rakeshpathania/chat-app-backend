@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const MessageSchema = mongoose.Schema(
+const messageSchema = mongoose.Schema(
   {
         message: {
           text: { type: String, required: true },
@@ -18,6 +18,6 @@ const MessageSchema = mongoose.Schema(
       }
 );
 
-export const Messages = mongoose.model("Messages", MessageSchema);
+export const Messages = mongoose.model("Messages", messageSchema);
 
 Messages.syncIndexes();

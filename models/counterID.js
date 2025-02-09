@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const CounteridSchema = mongoose.Schema(
+const counterIdSchema = mongoose.Schema(
   {
         id: {
           type: String, 
@@ -18,6 +18,6 @@ const CounteridSchema = mongoose.Schema(
       }
 );
 
-export const CounterID = mongoose.model("CounterID", CounteridSchema);
+export const CounterID = mongoose.model("CounterID", counterIdSchema);
 
 CounterID.syncIndexes();

@@ -1,5 +1,5 @@
 import { Messages } from "../models/messageModel.js";
-import Status from "../Trait/Status.js";
+import Status from "../traits/status.js";
 
 export default {
   async addMessage(req, res) {
