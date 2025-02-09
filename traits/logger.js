@@ -6,14 +6,15 @@ export const logger = winston.createLogger({
     winston.format.timestamp(),
     winston.format.json()
   ),
-  transports: [
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' }),
-  ],
+  transports: [],
 });
 
 if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.File({ filename: 'error.log', level: 'error' }));
+  logger.add(new winston.transports.File({ filename: 'combined.log' }));
+  logger.add(new winston.transports.Console({ format: winston.format.simple() }));
+} else {
   logger.add(new winston.transports.Console({
-    format: winston.format.simple(),
+    format: winston.format.json(),
   }));
 }
