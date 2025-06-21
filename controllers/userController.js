@@ -18,11 +18,11 @@ export default {
   //create new user..
   async create(req, res) {
     try {
-      const { username, email, password } = req.body;
+      const { username, email, password, confirm_password } = req.body;
 
       // Validation
       const validation = new Validator(
-        { username, email, password },
+        { username, email, password, confirm_password },
         {
           username: "required",
           email: "required|email|max:30",
